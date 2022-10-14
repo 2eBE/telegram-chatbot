@@ -1,0 +1,18 @@
+@startuml
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+!define DEVICONS https://raw.githubusercontent.com/tupadr3/plantuml-icon-font-sprites/master/devicons
+!include DEVICONS/java.puml
+
+System_Ext(suggestionAPI, "Suggestion API")
+System_Ext(weatherAPI, "Weather API")
+System_Ext(witAPI, "Wit API")
+System_Ext(telegramAPI, "Telegram API")
+
+Container(personalAssistantBot,"Personal assistant bot", "Java", $sprite="java")
+
+Rel_U(personalAssistantBot, weatherAPI, "Uses", "JSON/HTTPS")
+Rel_U(personalAssistantBot, suggestionAPI, "Uses", "JSON/HTTPS")
+Rel_U(personalAssistantBot, witAPI, "Uses", "JSON/HTTPS")
+Rel_D(personalAssistantBot, telegramAPI, "Uses", "JSON/HTTPS")
+
+@enduml

@@ -1,0 +1,28 @@
+@startuml
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+
+System_Ext(suggestionAPI, "Suggestion API")
+System_Ext(weatherAPI, "Weather API")
+System_Ext(witAPI, "Wit API")
+System_Ext(telegramAPI, "Telegram API")
+
+Container_Boundary(personalAssistantBot, "Personal assistant bot") {
+    Container(bot,"Bot", "Java/telegrambots", "Receives user messages and sends messages")
+    Container(messageProcessor,"Message processor", "Java", "Retrieves user intent and sends it to the intent delegator")
+    Container(intentDelegator,"Intent delegator", "Java", "Delegates the intent to the action responsible for that intent type")
+    Container(actions,"Actions", "Java", "Executes logic specific to the given intent")
+    Container(templateProvider,"Template provider","Java","Provides templates")
+}
+
+Rel_L(bot, telegramAPI, "Uses", "JSON/HTTPS")
+Rel_R(bot, messageProcessor, "Uses", "JSON/HTTPS")
+Rel(messageProcessor, witAPI, "Uses", "JSON/HTTPS")
+Rel(actions, suggestionAPI, "Uses", "JSON/HTTPS")
+Rel(actions, weatherAPI, "Uses", "JSON/HTTPS")
+Rel(actions, bot, "Sends messages", "JSON/HTTPS")
+
+Rel(messageProcessor, intentDelegator, "Uses")
+Rel(intentDelegator, actions, "Uses")
+Rel(actions, templateProvider, "Uses",)
+
+@enduml
