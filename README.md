@@ -9,7 +9,7 @@ This is a Telegram bot which can suggest activities or check the weather.
 
 ## Run
 - Build the project: `mvn clean install` 
-- Start the project: `mvn java:exec`
+- Start the project: `mvn exec:java`
 
 ## Run in IDE
 
