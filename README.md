@@ -13,4 +13,9 @@ This is a Telegram bot which can suggest activities or check the weather.
 
 ## Run in IDE
 
-Locate `PersonalAssistantBotInitializer` class in `src/main/java/telegram/bot` and run it.
+Locate `telegram.bot.PersonalAssistantBotInitializer` and run it.
+
+## Talk with the bot
+
+- Use the `BOT_USERNAME` defined in the `telegram.bot.config.BotConfiguration` to search for the bot in the Telegram app.
+- Alternatively, search for the "2e personal assistant bot" in the Telegram app.
