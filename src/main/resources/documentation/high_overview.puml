@@ -12,7 +12,7 @@ Container(personalAssistantBot,"Personal assistant bot", "Java", $sprite="java")
 
 Rel_U(personalAssistantBot, weatherAPI, "Uses", "JSON/HTTPS")
 Rel_U(personalAssistantBot, suggestionAPI, "Uses", "JSON/HTTPS")
-Rel_U(personalAssistantBot, witAPI, "Uses", "JSON/HTTPS")
+Rel_D(personalAssistantBot, witAPI, "Uses", "JSON/HTTPS")
 Rel_D(personalAssistantBot, telegramAPI, "Uses", "JSON/HTTPS")
 
 @enduml

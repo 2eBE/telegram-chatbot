@@ -8,4 +8,3 @@ WEATHER_UNKNOWN_CITY,"I'm sorry, I can't find any weather data. Can you please t
 UNRECOGNIZED_REQUEST,"Sorry, I can't figure out what to do."
 UNRECOGNIZED_REQUEST,"Excuse me, could you tell me again a bit differently? I didn't understand you."
 UNRECOGNIZED_REQUEST,"Sorry, I’m afraid I don’t follow you."
-TEMPERATURE, "The temperature in {cityName} is {temperature}, but it feels like {feelsLike}."
